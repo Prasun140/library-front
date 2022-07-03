@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { BookService } from 'services/book.service';
 import { LendingService } from 'services/lending.service';
+import { BookModel } from '../book.model';
 @Component({
   selector: 'app-add-lending',
   templateUrl: './add-lending.component.html',
@@ -7,14 +9,22 @@ import { LendingService } from 'services/lending.service';
 })
 export class AddLendingComponent implements OnInit {
 
-  constructor(private lendingService : LendingService) { }
+  constructor(private lendingService : LendingService, private bookService: BookService) { }
   public lendingObject= {
-    userId:'',
+    userId:localStorage.getItem("id"),
     bookId:'',
 
   }
+
+  books: BookModel[] = [];
   ngOnInit(): void {
+    this.bookService.getBooks().subscribe((data) => {
+      this.books = data
+    }, (error) => {
+      console.log(error);
+    })
   }
+
   formSubmit(){
     this.lendingService.createLending(this.lendingObject).subscribe(
       (data) => {

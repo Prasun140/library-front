@@ -1,0 +1,38 @@
+<p>admin-dashboard works!</p>
+<div  class="container text-center">
+<button mat-raised-button color="primary" (click)="getBooks()" class="mr20" >View Book</button>
+<button mat-raised-button color="primary" [routerLink]="'/add-book'" class="ml20" >Add Book</button><br>
+<div *ngIf=books.length>0 >
+
+
+<table id="books">
+  <tr>
+    <th *ngFor="let col of cols">
+      {{col}}
+    </th>
+  </tr>
+  <tr *ngFor="let book of books">
+    <td>
+      {{book.id}}
+    </td>
+    <td>
+      {{book.title}}
+    </td>
+    <td>
+      {{book.description}}
+    </td>
+    <td>
+      {{book.author}}
+    </td>
+    <td>
+      {{book.publishYear}}
+    </td>
+    <td>
+      {{book.stock}}
+    </td>
+  </tr>
+
+</table> 
+</div>
+  
+</div> 

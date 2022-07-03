@@ -1,1 +1,14 @@
-
+<mat-toolbar color="primary">
+    <button title="Home" mat-icon-button class="example-icon" [routerLink]="''" aria-label="Example icon-button with menu icon">
+      <mat-icon>library_books</mat-icon>
+    </button>
+    <span>LIBRARY</span>
+    <span class="example-spacer"></span>
+    <button title="Login" mat-icon-button class="example-icon favorite-icon" [routerLink]="'/login'" aria-label="Example icon-button with heart icon">
+      <mat-icon>login</mat-icon>
+    </button>
+    <button title="Logout" [routerLink]="''" mat-icon-button class="example-icon"  aria-label="Example icon-button with share icon">
+      <mat-icon>logout</mat-icon>
+    </button>
+  </mat-toolbar>
+  

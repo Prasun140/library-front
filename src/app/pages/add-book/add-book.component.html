@@ -1,0 +1,62 @@
+<Div class="bootstrap-wrapper">
+
+    <Div class="container">
+        <div class="row" style="margin-top: 10px">
+                <div class="col-md-6 offset-md-3">
+                  <mat-card>
+                    <div class="container text-center">
+                        <img src="../../../assets/admin_reg.jpg" alt="">
+                    </div> 
+                        <h1 class="text-center">Add Book</h1>
+                        <!-- {{user|json}}  -->
+                        <form (ngSubmit)="formSubmit()">
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Title</mat-label>
+                                <input required
+                                [(ngModel)]="book.title" 
+                                name="title"
+                                matInput placeholder="Enter the book title">
+                                <!-- <mat-hint>Username must be unique</mat-hint> -->
+                              </mat-form-field>
+                              <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Description</mat-label>
+                                <input required
+                                [(ngModel)]="book.description" 
+                                name="description"
+                                type="description" matInput placeholder="Enter book description">
+                              </mat-form-field>
+                              <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Author</mat-label>
+                                <input required
+                                [(ngModel)]="book.author"
+                                name="author"
+                                 matInput placeholder="Enter author name">
+                              </mat-form-field>
+                              <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Publish Year</mat-label>
+                                <input required
+                                [(ngModel)]="book.publishYear"
+                                name="publishYear"
+                                 matInput placeholder="Enter the publish year of the book">
+                              </mat-form-field>
+                              <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Stock</mat-label>
+                                <input type="number"
+                                [(ngModel)]="book.stock"
+                                name="stock"
+                                type="stock" matInput placeholder="Enter the stock of the book">
+                              </mat-form-field>
+                        
+                              <div class="container text-center">
+                                    <button type="submit" mat-raised-button color="primary">Add</button>
+                                    <button type="reset" mat-raised-button style="margin-left:20px" color="accent">Reset</button>
+                                    
+                              </div>
+                        </form>
+                      </mat-card>
+                </div>
+        </div>
+    </Div>
+    
+    </Div>
+    

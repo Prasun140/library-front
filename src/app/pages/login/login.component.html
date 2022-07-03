@@ -8,18 +8,20 @@
                         <img src="../../../assets/login.jpg" alt="">
                     </div> 
                     <h1 class="text-center">Login!!</h1>
-                    <form>
+                    <form (ngSubmit)="formSubmit()">
                         <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Username</mat-label>
                             <input 
-
+                            [(ngModel)]="user.username"
+                            name="username"
                             matInput placeholder="Enter your username">
                             <mat-hint>Username must be valid</mat-hint>
                           </mat-form-field>
                           <mat-form-field class="full-width" appearance="outline">
                             <mat-label>Password</mat-label>
                             <input type="password"
-
+                            [(ngModel)]="user.password"
+                            name="password"
                             matInput placeholder="Enter your password">
                             <mat-hint>Password must be valid</mat-hint>
                           </mat-form-field>

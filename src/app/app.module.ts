@@ -14,7 +14,15 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './pages/home/home.component';
-import {MatCardModule} from '@angular/material/card'; 
+import {MatCardModule} from '@angular/material/card';
+import { SignupStudentComponent } from './pages/signup-student/signup-student.component';
+import { StudentDashboardComponent } from './pages/student-dashboard/student-dashboard.component';
+import { AdminDashboardComponent } from './pages/admin-dashboard/admin-dashboard.component';
+import {MatToolbarModule} from '@angular/material/toolbar'; 
+import {MatIconModule} from '@angular/material/icon'; 
+import {MatTableModule} from '@angular/material/table';
+import { AddBookComponent } from './pages/add-book/add-book.component';
+import { AddLendingComponent } from './pages/add-lending/add-lending.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +32,11 @@ import {MatCardModule} from '@angular/material/card';
     SignupComponent,
     LoginComponent,
     HomeComponent,
+    SignupStudentComponent,
+    StudentDashboardComponent,
+    AdminDashboardComponent,
+    AddBookComponent,
+    AddLendingComponent,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +47,10 @@ import {MatCardModule} from '@angular/material/card';
     MatFormFieldModule,
     FormsModule,
     HttpClientModule,
-    MatCardModule
+    MatCardModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

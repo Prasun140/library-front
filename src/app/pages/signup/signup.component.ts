@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'services/user.service';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,38 +10,39 @@ import { UserService } from 'services/user.service';
 })
 export class SignupComponent implements OnInit {
 
-  constructor(private userService:UserService) { }
-public user={
-username: '',
-password: '',
-firstName:'',
-lastName:'',
-email:'',
-phone :'',
-}
+  constructor(private userService: UserService, private router: Router) { }
+  public user = {
+    username: '',
+    password: '',
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+  }
 
 
   ngOnInit(): void {
   }
 
-  formSubmit(){
+  formSubmit() {
 
-   
-    if( this.user.username=='' || this.user.username==null){
+
+    if (this.user.username == '' || this.user.username == null) {
 
       alert('Username is required!!')
       return;
     }
     // alert('Submitted successfully');
-    this.userService.addUser(this.user). subscribe (
+    this.userService.addUserAsAdmin(this.user).subscribe(
       (data) => {
         console.log(data);
-        alert('success');
+        this.router.navigate(["/login"]);
+       // alert('success');
       },
-    (error) => {
-      console.log(error);
-      alert('success');
-    }
+      (error) => {
+        console.log(error);
+       // alert('error');
+      }
     );
 
   }
